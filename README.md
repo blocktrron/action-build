@@ -71,6 +71,9 @@ Determines if deprecated devices should be built
 #### Default
 0
 
+### build-nonshared
+#### TODO
+
 
 ### hardware-target
 #### Description 

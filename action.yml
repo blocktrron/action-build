@@ -25,6 +25,8 @@ inputs:
   deprecated:
     description: 'Determines if deprecated devices should be built (Default: 0)'
     default: 0
+  build-nonshared:
+    default: 1
   hardware-target:
     description: 'Target to build'
   make-target:
@@ -57,6 +59,7 @@ runs:
           --env ACTION_GLUON_AUTOUPDATER_BRANCH \
           --env ACTION_GLUON_BROKEN \
           --env ACTION_GLUON_DEPRECATED \
+          --env ACTION_GLUON_BUILD_NONSHARED \
           --env ACTION_GLUON_PRIORITY \
           --env ACTION_GLUON_RELEASE \
           --env ACTION_GLUON_SITE_VERSION \
@@ -70,6 +73,7 @@ runs:
         ACTION_GLUON_AUTOUPDATER_BRANCH: ${{ inputs.autoupdater-branch }}
         ACTION_GLUON_BROKEN: ${{ inputs.broken }}
         ACTION_GLUON_DEPRECATED: ${{ inputs.deprecated }}
+        ACTION_GLUON_BUILD_NONSHARED: ${{ inputs.build-nonshared }}
         ACTION_GLUON_PRIORITY: ${{ inputs.priority }}
         ACTION_GLUON_RELEASE: ${{ inputs.release }}
         ACTION_GLUON_SITE_VERSION: ${{ inputs.site-version }}
